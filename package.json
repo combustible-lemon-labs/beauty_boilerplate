@@ -1,6 +1,6 @@
 {
   "name": "fivem-ts-preact-boilerplate",
-  "version": "2.1.1",
+  "version": "1.0.0",
   "description": "Typescript Boilerplate for FiveM with a Preact-powered NUI",
   "main": "index.js",
   "repository": "https://github.com/Ascent-Gaming/fivem-ts-preact",
