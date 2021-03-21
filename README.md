@@ -16,6 +16,7 @@ This boilerplate includes all that is required to begin writing resources using 
 - [Introduction](#introduction)
   - [Preact in-a-🌰](#preact-in-a-)
   - [Tailwind in-a-🌰](#tailwind-in-a-)
+- [Examples](#examples)
 - [What's Next?](#whats-next)
 - [Usage](#usage)
   - [NPM Scripts](#npm-scripts)
@@ -31,6 +32,8 @@ This boilerplate includes all that is required to begin writing resources using 
 - [License](#license)
 
 > If you do not require the functionality of Preact and Tailwind, i.e. you just want to write a TypeScript resource-no UI, consider the [`fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate) instead.
+
+> I'm assuming you already are familiar with Preact (React is strikingly similar) and Tailwind. Both are very easy to start using if you're already familiar with JavaScript and how CSS styling traditionally works.
 
 > It's highly recommended you use [VSCode](https://code.visualstudio.com/) and the [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) and [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extensions. The will be recommended for installation when you first open the project in VSCode.
 
@@ -67,6 +70,14 @@ Preact has more information [in their documentation](https://preactjs.com/guide/
 [TailwindCSS](https://tailwindcss.com/) is a "utility-first" CSS framework for building applications composed of highly-reusable and customizable utility `classes`.
 
 It makes a great pairing for Preact, as it lets you write reusable components with styles baked into the components markup. Its [Core Concepts](https://tailwindcss.com/docs/utility-first) section provides a more in-depth explanation.
+
+## Examples
+
+* [`src/client/client.ts`](src/client/client.ts) provides an example for displaying/hiding the NUI frontend.
+* [`src/server/server.ts`](src/server/server.ts) provides a command for toggling the example UI.
+* [`src/html/components/render.js`](src/html/components/render.js) is a ready-to-use component for actively toggling a Preact "application" based on input a client-script.
+* [`src/html/app.js`](src/html/app.js) is a minimal Preact "application" which contains a single component, [`Dashboard`](src/html/pages/dashboard.js)
+* [`src/html/styles/style.css`](src/html/styles/style.css) is the entry-point for TailwindCSS integration, building, and watching.
 
 ## What's Next?
 
