@@ -33,7 +33,7 @@ This boilerplate includes all that is required to begin writing resources using 
 
 > If you do not require the functionality of Preact and Tailwind, i.e. you just want to write a TypeScript resource-no UI, consider the [`fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate) instead.
 
-> I'm assuming you already are familiar with Preact (React is strikingly similar) and Tailwind. Both are very easy to start using if you're already familiar with JavaScript and how CSS styling traditionally works.
+> I'm assuming you are already familiar with Preact/React and Tailwind. Both are very easy to start using if you're already familiar with JavaScript and how CSS styling traditionally works.
 
 > It's highly recommended you use [VSCode](https://code.visualstudio.com/) and the [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) and [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extensions. The will be recommended for installation when you first open the project in VSCode.
 
