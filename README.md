@@ -1,4 +1,4 @@
-# FiveM TypeScript Boilerplate
+# FiveM Beauty Boilerplate
 
 <h3 align="center"><a href="https://preactjs.com/" target="_blank">Preact</a> and <a href="https://tailwindcss.com/" target="_blank">Tailwind</a> 🔋 NUI</h3>
 <h3 align="center"><code><a href="https://github.com/d0p3t/fivem-js" target="_blank">fivem-js</a></code> 🏃‍♀️ included</h3>
