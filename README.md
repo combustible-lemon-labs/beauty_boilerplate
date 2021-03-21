@@ -1,62 +1,98 @@
-<h1 align="center">fivem-ts-preact</h1>
+<h2 align="center">FiveM TypeScript Boilerplate</h2>
+<h3 align="center"><a href="https://preactjs.com/" target="_blank">Preact</a> and <a href="https://tailwindcss.com/" target="_blank">Tailwind</a> 🔋 NUI</h3>
+<h4 align="center"><code><a href="https://github.com/d0p3t/fivem-js" target="_blank">fivem-js</a></code> included 🏃‍♀️</h4>
+<br/>
 
-<p align="center">
-  <i>:fire: A Typescript Boilerplate for FiveM with a Preact-powered NUI :video_game:</i>
-  <br>
-  <br>
-  <a href="https://github.com/Ascent-Gaming/fivem-ts-preact/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat" alt="License: MIT">
-  </a>
-  <a href="https://github.com/Ascent-Gaming/fivem-ts-preact/commits/master">
-    <img src="https://img.shields.io/github/last-commit/Ascent-Gaming/fivem-ts-preact.svg?style=flat" alt="Last commit">
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/workflow/status/Ascent-Gaming/fivem-ts-preact/Node.js%20CI" alt="Workflow">
-  </a>
-</p>
+> This boilerplate is a fork of [d0pt3's `fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate). Thank-you to the responsible parties for the *game* portion of this setup.
 
-> This boilerplate is based on [d0pt3's `fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate).
+## Introduction
 
-> A [Preact](https://preactjs.com/) NUI has been added which, by default, has no configuration and comes with [Bootstrap v5](https://getbootstrap.com/). You are responsible for adding `show`/`hide` logic, replacing/removing Bootstrap, etc.
+This boilerplate includes all that is required to begin writing resources using TypeScript, which have a Preact and Tailwind powered NUI.
 
-This is a basic boilerplate for creating a FiveM resource using Typescript. It includes webpack config files, linting (ESlint + prettier) and a directory structure to get you started. We recommend to use [fivem-js](https://github.com/d0p3t/fivem-js) alongside this boilerplate for faster development of client scripts.
+> If you do not require the functionality of Preact and Tailwind, i.e. you just want to write a TypeScript resource-no UI, consider the [`fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate) instead.
 
-## Usage
-1. Clone repository into your `resources/[local]` folder.
-2. `npm i` the dependencies.
-3. Start development.
+> It's highly recommended you use [VSCode](https://code.visualstudio.com/) and the [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) and [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extensions. The will be recommended for installation when you first open the project in VSCode.
 
-### Preact
+### Preact in-a-🌰
 
-No additional steps need to be taken to begin using Preact. See `src/html/` for an example.
+[Preact](https://preactjs.com/) is a minifed, alternative version of [React](https://reactjs.org/). It provides everything necessary to begin writing reusable, component based applications-or NUIs.
 
-***Note:*** It's recommended you use the [`lit-html`](https://marketplace.visualstudio.com/items?itemName=bierner.lit-html) VSCode extension, or similar for another editor.
+Using [Functional Components](https://preactjs.com/guide/v10/components#functional-components) and [Hooks](https://preactjs.com/guide/v10/hooks), you can quickly write reactive user interfaces. [Class Components](https://preactjs.com/guide/v10/components#class-components), should, work; though I haven't tested them personally.
 
-### Bootstrap
+Looking at the NUI source, you may notice the unique way in which Preact's components are written:
 
-By default, the UI will provide Bootstrap. This means you're free to start making NUI's using the full power of Bootstrap v5.
-
-> Customization for Bootstrap will come at a later date. In short, in involves adding the Bootstrap SCSS source files and setting up SASS to compile these files to CSS. This process can be made-easy by hooking into the `watch` command, i.e. by using [`concurrently`](https://www.npmjs.com/package/concurrently), to compile changes to the directory your custom SCSS resides as you make them.
-
-### Development
-Use `npm run watch` to watch files during development.
-
-### Production
-Build your production ready code with `npm run build`.
-
-This will build the client and server script with the `--mode production` flag.
-
-### Automatic Builds (Optional)
-The `fxmanifest.lua` is not setup to automatically build upon first FXServer start. If you'd like to setup automatic builds you must add the following to your `fxmanifest.lua`.
-
-```lua
-dependency 'yarn'
-dependency 'webpack'
-
-webpack_config 'webpack.config.js'
+```JavaScript
+const _Template = ({ children }) => {
+  return (
+    html`
+      <div class=${_TemplateClasses}>
+        ${children}
+      </div>
+    `
+  )
+}
 ```
 
-However, due to the speed performance of the pre-packaged webpack/yarn of cfx-server-data, we suggest you don't do this and build manually as described previously ("Production").
+This is known as [Hyperscript Tagged Markup](https://github.com/developit/htm), and is a way to write components in a JSX-like way while using nothing but [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+
+Preact has more information [in their documentation](https://preactjs.com/guide/v10/getting-started#alternatives-to-jsx).
+
+> `src/html/components/_template.js` exists as a reference for building your own Preact-components. Remember to keep the [Hooks reference](https://preactjs.com/guide/v10/hooks) on-hand as they're a great way to keep all NUI functionality within the UI.
+
+### Tailwind in-a-🌰
+
+[TailwindCSS](https://tailwindcss.com/) is a "utility-first" CSS framework for building applications composed of highly-reusable and customizable utility `classes`.
+
+It makes a great pairing for Preact, as it lets you write reusable components with styles baked into the components markup. Its [Core Concepts](https://tailwindcss.com/docs/utility-first) section provides a more in-depth explanation.
+
+## Usage
+
+1) You'll want to `"Use this template"` to create your own repository. 
+2) `git clone` your newly created repository onto your local-machine.
+3) Enter the cloned directory and run `npm install` to get all dependencies.
+4) You should now be ready to begin writing your resource. See the following section for information on the various `scripts` which make using the boilerplate easier.
+
+### NPM Scripts
+
+#### `build`
+
+Builds both the `script` and `nui` sides of the resource.
+
+This command is used to build a production-ready version of your resource.
+
+#### `build:nui`
+
+Uses [`PostCSS`](https://postcss.org/) to generate `styles` based on the contents of your resource's `src/html/` directory.
+
+This process is what provides your NUI all Tailwind styling, and is ran with `NODE_ENV=production` to optimize generated stylesheets.
+
+> You can alter the [`purging`](https://tailwindcss.com/docs/optimizing-for-production) of Tailwind styling by editing `./tailwind.config.js`.
+
+#### `build:script`
+
+Uses [`Webpack`](https://webpack.js.org/) to bundle and envoke transpiliation of the resource's TypeScript source. Is ran with `--mode production`.
+
+#### `watch`
+
+Watches both the `script` and `nui` sides of the resources, re-bundling/generating them if any changes are detected.
+
+#### `watch:nui`
+
+Uses `PostCSS` to watch the `nui` side of the resource; this process mainly exists to generate a development-version of Tailwind, which includes *all* stylings to improve DX while creating your UI.
+
+> Altering any JS or HTML files for your NUI simply require a `restart` in the FiveM console.
+
+#### `watch:script`
+
+Uses `Webpack` to bundle the `script` anytime changes are detected.
+
+#### `format`
+
+Use [`Prettier`](https://prettier.io/) to format all TypeScript source code.
+
+#### `link`
+
+Use [`ESLint`](https://eslint.org/) to lint all TypeScript source code.
 
 ## License
 This product is MIT licensed. Please make sure you give credit and include this license in your product.
