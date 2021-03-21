@@ -1,17 +1,40 @@
 <h2 align="center">FiveM TypeScript Boilerplate</h2>
 <h3 align="center"><a href="https://preactjs.com/" target="_blank">Preact</a> and <a href="https://tailwindcss.com/" target="_blank">Tailwind</a> 🔋 NUI</h3>
-<h4 align="center"><code><a href="https://github.com/d0p3t/fivem-js" target="_blank">fivem-js</a></code> included 🏃‍♀️</h4>
+<h4 align="center"><code><a href="https://github.com/d0p3t/fivem-js" target="_blank">fivem-js</a></code> 🏃‍♀️ included</h4>
 <br/>
 
-> This boilerplate is a fork of [d0pt3's `fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate). Thank-you to the responsible parties for the *game* portion of this setup.
+---
+
+> This boilerplate is a fork of [d0pt3's `fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate). Thank-you to the responsible parties for the Webpack portion of this setup.
+
+---
 
 ## Introduction
 
-This boilerplate includes all that is required to begin writing resources using TypeScript, which have a Preact and Tailwind powered NUI.
+This boilerplate includes all that is required to begin writing resources using TypeScript, which have a [**Preact**](https://preactjs.com/) and [**TailwindCSS**](https://tailwindcss.com/) powered NUI.
+
+- [Introduction](#introduction)
+  - [Preact in-a-🌰](#preact-in-a-)
+  - [Tailwind in-a-🌰](#tailwind-in-a-)
+- [What's Next?](#whats-next)
+- [Usage](#usage)
+  - [NPM Scripts](#npm-scripts)
+    - [`build`](#build)
+    - [`build:nui`](#buildnui)
+    - [`build:script`](#buildscript)
+    - [`watch`](#watch)
+    - [`watch:nui`](#watchnui)
+    - [`watch:script`](#watchscript)
+    - [`format`](#format)
+    - [`link`](#link)
+- [Deployment](#deployment)
+- [License](#license)
 
 > If you do not require the functionality of Preact and Tailwind, i.e. you just want to write a TypeScript resource-no UI, consider the [`fivem-ts-boilerplate`](https://github.com/d0p3t/fivem-ts-boilerplate) instead.
 
 > It's highly recommended you use [VSCode](https://code.visualstudio.com/) and the [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) and [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extensions. The will be recommended for installation when you first open the project in VSCode.
+
+> The VSCode status-bar customizations can be disabled/configured in `./.vscode/settings.json`
 
 ### Preact in-a-🌰
 
@@ -45,9 +68,15 @@ Preact has more information [in their documentation](https://preactjs.com/guide/
 
 It makes a great pairing for Preact, as it lets you write reusable components with styles baked into the components markup. Its [Core Concepts](https://tailwindcss.com/docs/utility-first) section provides a more in-depth explanation.
 
+## What's Next?
+
+I'd love to provide a set of customizable Preact components for NUI frontends, powered by Tailwind of course.
+
+Improve build process; instead of splitting the resource in `./dist/` and the NUI in `./src/html/`, copy the needed files from `./src/html/` to `./dist/`.
+
 ## Usage
 
-1) You'll want to `"Use this template"` to create your own repository. 
+1) You'll want to `"Use this template"` to create your own repository.
 2) `git clone` your newly created repository onto your local-machine.
 3) Enter the cloned directory and run `npm install` to get all dependencies.
 4) You should now be ready to begin writing your resource. See the following section for information on the various `scripts` which make using the boilerplate easier.
@@ -93,6 +122,12 @@ Use [`Prettier`](https://prettier.io/) to format all TypeScript source code.
 #### `link`
 
 Use [`ESLint`](https://eslint.org/) to lint all TypeScript source code.
+
+## Deployment
+
+All you need for "deploying" this resource to a server-environment is the `./dist/` and `./src/html/` directories, along with the `fxmanifest.lua` configuration.
+
+The configuration in `fxmanifest` will ensure only the `dist` stylesheet is sent to the client.
 
 ## License
 This product is MIT licensed. Please make sure you give credit and include this license in your product.
